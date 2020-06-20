@@ -1,0 +1,59 @@
+<div class="container">
+  <h2 class="header-text"> Upload Documents</h2>
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+            data-target="#collapseOne">
+            Hospital Documents
+          </button>
+        </h2>
+      </div>
+      <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+        <div class="card-body">
+          <app-fileupload [uploadLabel]="'Upload Hospital Documents'" [totalUploadFileSize]="totalDocumentSize"
+            (fileSizeEvent)="totalSizeEvent($event)" (fileRemoveSizeEvent)="removeFromTotalSize($event)">
+          </app-fileupload>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+            data-target="#collapseTwo">
+            Personal Documents
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+        <div class="card-body">
+          <app-fileupload [uploadLabel]="'Upload Personal Documents'" [totalUploadFileSize]="totalDocumentSize"
+            (fileSizeEvent)="totalSizeEvent($event)" (fileRemoveSizeEvent)="removeFromTotalSize($event)">
+          </app-fileupload>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+            data-target="#collapseThree">
+            Other Documents
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+        <div class="card-body">
+          <app-fileupload [totalUploadFileSize]="totalDocumentSize" (fileSizeEvent)="totalSizeEvent($event)"
+            (fileRemoveSizeEvent)="removeFromTotalSize($event)">
+          </app-fileupload>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

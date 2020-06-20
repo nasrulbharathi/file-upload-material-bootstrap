@@ -1,0 +1,20 @@
+.btn:focus {
+    box-shadow: none;
+}
+
+.header-text {
+    color: #007bff;
+    margin-left: 35%;
+}
+
+.accordion .btn:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+    color: #007bff;
+}
+
+.accordion .btn.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067"; 
+}

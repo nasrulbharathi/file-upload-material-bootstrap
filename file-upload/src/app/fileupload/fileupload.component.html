@@ -1,0 +1,18 @@
+<mat-card class="example-card">
+    <button mat-raised-button color="primary" (click)="onClick($event)">
+        <mat-icon>add</mat-icon>
+        {{uploadLabel}}
+    </button>
+
+    <input #fileUpload type="file" class="input_fileupload" (change)="onFileSelected($event)">
+
+    <div *ngFor="let f of files">
+        <span class="label">File Name -</span>
+        <span class="spacing">{{f.name}}</span>
+        <span class="label spacing">Size -</span>
+        <span class="spacing">{{f.size}}</span>
+        <button mat-icon-button color="primary" (click)="removeFile(event,f)">
+            <mat-icon>{{deleteButtonIcon}}</mat-icon>
+        </button>
+    </div>
+</mat-card>

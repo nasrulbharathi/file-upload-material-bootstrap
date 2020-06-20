@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-primary" (click)="onClick($event)">
+            <i class="fa fa-upload"></i>
+            {{uploadLabel}}
+        </button>
+    </div>
+    <div class="col-4">
+        <div #toastMessage class="toast">
+            <div class="toast-header">
+                <strong class="mr-auto text-danger">Error</strong>
+            </div>
+            <div class="toast-body">
+                {{ toastMessageText }}
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div *ngFor="let f of files">
+    <span class="label">File Name -</span>
+    <span class="spacing">{{f.name}}</span>
+    <span class="label spacing">Size -</span>
+    <span class="spacing">{{f.size}}</span>
+    <i class="fa fa-times-circle fa-lg spacing removeIcon" (click)="removeFile(event,f)"></i>
+</div>
+
+<input #fileUpload type="file" class="input_fileupload" (change)="onFileSelected($event)">
